@@ -25,5 +25,9 @@ public class LearnMemberStatic : MonoBehaviour
         // 設定 Set：類別.靜態屬性 = 值
         // 不能設定 Read Only 的屬性
         Time.timeScale = 1f;
+
+        // 使用靜態方法
+        print(Random.Range(0.1f, 99.9f));   // 第一個多載
+        print(Random.Range(100, 500));      // 第二個多載
     }
 }
