@@ -10,6 +10,12 @@ public class LearnMemberStatic : MonoBehaviour
     bool d = false;
     string e = "我是字串";       // string 字串
 
+    // 修飾詞 類型 名稱 指定 值;
+    // 公開 public 允許所有文件存取：顯示在屬性面板
+    public int score = 10;
+    // 私人 private 僅限使類別存取：隱藏在屬性面板
+    private int speed = 99;
+
     private void Start()
     {
         // 使用靜態成員
