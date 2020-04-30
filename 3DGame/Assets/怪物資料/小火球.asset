@@ -17,3 +17,5 @@ MonoBehaviour:
   speed: 1
   probHp: 0.3
   probCd: 0.1
+  cd: 2.5
+  bulletSpeed: 10
