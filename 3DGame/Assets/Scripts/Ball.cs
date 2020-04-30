@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
         if (other.tag == "怪物")
         {
             other.GetComponent<Monster>().Damage(damage);
+            Destroy(gameObject);
         }
     }
 }
