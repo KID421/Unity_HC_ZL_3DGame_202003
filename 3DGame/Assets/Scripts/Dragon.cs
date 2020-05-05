@@ -4,12 +4,13 @@ using System.Collections;
 
 public class Dragon : MonoBehaviour
 {
+    public static float cd = 0.5f;
+    public static float hp = 100;
+
     [Header("移動速度"), Range(1, 1000)]
     public float speed = 300;
     [Header("虛擬搖桿")]
     public Joystick joy;
-    [Header("攻擊冷卻時間")]
-    public float cd = 1;
     [Header("延遲生成火球時間")]
     public float delayFire = 0.5f;
     [Header("火球")]
@@ -18,10 +19,10 @@ public class Dragon : MonoBehaviour
     public float speedFireBall = 300;
     [Header("攻擊力"), Range(1, 5000)]
     public float attack = 35;
-    [Header("血量"), Range(1, 100)]
-    public float hp = 100;
     [Header("血條")]
     public Image hpBar;
+
+    private GameManager gm;
 
     // 第一種寫法：需要欄位
     // public Transform tra;
@@ -158,6 +159,7 @@ public class Dragon : MonoBehaviour
     /// <param name="damage">接收到的傷害值</param>
     public void Damage(float damage)
     {
+        if (gm.passLv) return;
         StartCoroutine(HpBarEffectSub(damage));
     }
 
@@ -167,6 +169,7 @@ public class Dragon : MonoBehaviour
     private void Dead()
     {
         ani.SetBool("死亡開關", true);
+        gm.Lose();
     }
 
     private void Start()
@@ -174,6 +177,8 @@ public class Dragon : MonoBehaviour
         // 取得元件<泛型>()
         ani = GetComponent<Animator>();
         hpBar.fillAmount = hp / 100;
+
+        gm = FindObjectOfType<GameManager>();
     }
 
     private void Update()

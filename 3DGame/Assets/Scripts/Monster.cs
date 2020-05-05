@@ -37,8 +37,14 @@ public class Monster : MonoBehaviour
     public void Damage(float damage)
     {
         hp -= damage;
-
+        GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.red;
+        Invoke("ResetColor", 0.1f);
         if (hp <= 0) Dead();
+    }
+
+    private void ResetColor()
+    {
+        GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.white;
     }
 
     /// <summary>

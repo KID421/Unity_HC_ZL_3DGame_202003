@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u8759\u8760"
   m_EditorClassIdentifier: 
   hp: 150
-  attack: 30
+  attack: 210
   speed: 3.5
   probHp: 0.35
   probCd: 0.15
