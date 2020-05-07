@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Dragon : MonoBehaviour
 {
-    public static float cd = 0.5f;
+    public static float cd = 1.3f;
     public static float hp = 100;
 
     [Header("移動速度"), Range(1, 1000)]

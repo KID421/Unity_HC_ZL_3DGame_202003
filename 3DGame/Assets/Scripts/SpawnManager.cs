@@ -32,7 +32,7 @@ public class SpawnManager : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(15);
         gm.Win();
     }
 }
